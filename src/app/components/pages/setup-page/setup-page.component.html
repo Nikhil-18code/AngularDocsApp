@@ -1,0 +1,112 @@
+<div class="setup" >
+    <h1>Setting Up the Project</h1>
+    <p>
+        Follow this step-by-step guide to install and configure the Angular documentation web app on your local system.
+        This guide covers installation, dependencies, and project structure.
+    </p>
+
+    <h2>1. Prerequisites</h2>
+    <p>Before setting up the project, ensure you have the following installed on your system:</p>
+    <ul>
+        <li> ✔ **Node.js** (Latest LTS version)- <a href="https://nodejs.org/" target="_blank">>Download here</a></li>
+        <li>✔ **Angular CLI** - A command line tool for anular projects</li>
+        <li>✔ **Git** (Optional, but recommended) - <a href="https://git-scm.com/" target="_blank">Download here</a>
+        </li>
+        <li> ✔ **A Code Editor** (VS Code recommended)- <a href="https://code.visualstudio.com"
+                target="_blank">Download here</a></li>
+    </ul>
+   
+        <h2>2. Install Angular CLI globally by running:</h2>
+    
+    <pre><code>npm install -g &#64;angular/cli</code></pre>
+    <p>Check if Angular CLI is installed correctly:</p>
+    <pre><code>ng version</code></pre>
+
+    <h2>3. Cloning the Project</h2>
+    <p>To get the latest version of the documentation web app, clone the repository using Git:</p>
+    <pre><code>git clone https://github.com/your-repo/angular-docs.git</code></pre>
+    <p>Navigate into the project directory:</p>
+
+    <pre><code>cd angular-docs</code></pre>
+
+
+
+    <h2>4. Installing Dependencies</h2>
+
+    <p>Once inside the project folder, install all dependencies by running:</p>
+
+    <pre><code>npm install</code></pre>
+
+    <p>This command will download and install all required **Node modules**.</p>
+
+
+
+    <h2>5. Running the Application</h2>
+
+    <p>After installing dependencies, start the Angular development server:</p>
+
+    <pre><code>ng serve</code></pre>
+
+    <p>Once the server is running, open a browser and go to:</p>
+
+    <pre><code>http://localhost:4200</code></pre>
+
+
+    <h2>6. Understanding the Project Structure</h2>
+
+    <p>The project follows a clean and modular structure:</p>
+
+    <pre><code>
+
+angular-docs/
+
+│── src/
+
+│   │── app/
+
+│   │   │── pages/         # Contains all sections (Introduction, Setup, etc.)
+
+│   │   │── components/    # Standalone UI components (Sidebar, Header, etc.)
+
+│   │── assets/            # Static files like images, styles, etc.
+
+│── angular.json           # Angular project configuration
+
+│── package.json           # Project dependencies
+
+│── tsconfig.json          # TypeScript configuration
+
+  </code></pre>
+
+
+
+    <h2>7. Customizing the Project</h2>
+
+    <p>You can customize the project by modifying the components inside **`src/app/pages/`**.</p>
+
+
+
+    <h2>8. Troubleshooting</h2>
+
+    <p>If you encounter any issues, try the following:</p>
+
+    <ul>
+
+        <li>🛠 **Clear npm cache:** <code>npm cache clean --force</code></li>
+
+        <li>🛠 **Reinstall dependencies:** <code>rm -rf node_modules && npm install</code></li>
+
+        <li>🛠 **Check for Angular CLI updates:** <code>ng update</code></li>
+
+        <li>🛠 **Restart the development server** after making changes.</li>
+
+    </ul>
+
+
+
+    <h2>Next Steps</h2>
+
+    <p>Now that the project is set up, continue to the <a class="router-link" routerLink="/components">Components Guide</a> to
+        start building!</p>
+
+</div>

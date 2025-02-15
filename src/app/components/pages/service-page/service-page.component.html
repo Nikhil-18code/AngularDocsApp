@@ -1,0 +1,107 @@
+<div class="services" id="services-top">
+    <h1>Understanding Angular Services</h1>
+    <p>
+      Angular services are classes that provide specific functionality—such as data fetching, business logic, or state management—that can be shared across multiple components. By isolating such logic in services, you keep your components lean and focused on presentation.
+    </p>
+   
+    <h2>What is an Angular Service?</h2>
+    <p>
+      A service is essentially a TypeScript class that is decorated with <code>&#64;Injectable</code>. When provided at the root level, Angular creates a single instance (a singleton) of the service that can be injected into any component or other service.
+    </p>
+    <ul>
+      <li><strong>Separation of Concerns:</strong> Encapsulate business logic and data retrieval.</li>
+      <li><strong>Reusability:</strong> Share common functionalities across multiple components.</li>
+      <li><strong>Testability:</strong> Isolate functionality for easier unit testing.</li>
+    </ul>
+   
+    <h2>Creating a Service</h2>
+    <p>
+      You can generate a service using Angular CLI. For example, to create a service called <code>DataService</code>:
+    </p>
+    <pre>
+      <code>ng generate service data</code>
+    </pre>
+    <p>
+      This command creates a file similar to the following:
+    </p>
+    <pre>
+      <code>
+  import &#123; Injectable &#125; from '&#64;angular/core';
+   
+  &#64;Injectable(&#123;
+    providedIn: 'root'
+  &#125;)
+  export class DataService &#123;
+    constructor() &#123; &#125;
+   
+    getData(): string[] &#123;
+      return ['Angular', 'React', 'Vue'];
+    &#125;
+  &#125;
+      </code>
+    </pre>
+   
+    <h2>Injecting a Service into a Component</h2>
+    <p>
+      To use a service in a component, inject it via the constructor. For example:
+    </p>
+    <pre>
+      <code>
+  import &#123; Component, OnInit &#125; from '&#64;angular/core';
+  import &#123; DataService &#125; from './data.service';
+   
+  &#64;Component(&#123;
+    selector: 'app-example',
+    template: '&lt;div&gt;Data: &#123; data &#125;&lt;/div&gt;',
+    standalone: true
+  &#125;)
+  export class ExampleComponent implements OnInit &#123;
+    data: string[] = [];
+   
+    constructor(private dataService: DataService) &#123; &#125;
+   
+    ngOnInit() &#123;
+      this.data = this.dataService.getData();
+    &#125;
+  &#125;
+      </code>
+    </pre>
+   
+    <h2>Making HTTP Requests in Services</h2>
+    <p>
+      Services are the ideal place to perform HTTP requests. Angular’s HttpClient module allows you to communicate with external APIs. Here’s an example service that fetches data:
+    </p>
+    <pre>
+      <code>
+  import &#123; Injectable &#125; from '&#64;angular/core';
+  import &#123; HttpClient &#125; from '&#64;angular/common/http';
+  import &#123; Observable &#125; from 'rxjs';
+   
+  &#64;Injectable(&#123;
+    providedIn: 'root'
+  &#125;)
+  export class ApiService &#123;
+  private apiUrl = 'https://api.example.com/data';
+   
+    constructor(private http: HttpClient) &#123; &#125;
+   
+    fetchData(): Observable&lt;any&gt; &#123;
+      return this.http.get(this.apiUrl);
+    &#125;
+  &#125;
+      </code>
+    </pre>
+   
+    <h2>Best Practices for Services</h2>
+    <ul>
+      <li>Keep services focused on a single responsibility.</li>
+      <li>Provide services at the root level (using <code>providedIn: 'root'</code>) to ensure a singleton instance.</li>
+      <li>Handle errors and loading states appropriately.</li>
+      <li>Write unit tests for your service methods.</li>
+    </ul>
+   
+    <h2>Next Steps</h2>
+    <p>
+      With a solid understanding of Angular services, you can now explore how they interact with components. Proceed to the <a routerLink="/guide/components" fragment="components-top">Components</a> section to learn more about building your application’s UI.
+    </p>
+  </div>

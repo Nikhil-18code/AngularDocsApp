@@ -1,0 +1,51 @@
+.components {
+    padding: 25px;
+    font-family: 'Arial', sans-serif;
+  }
+  .components code {
+    font-family: cursive;
+  }
+  .components h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .components h2 {
+    font-size: 1.5em;
+    color: #34495e;
+    margin-top: 20px;
+  }
+  
+  .components p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .components ul {
+    padding-left: 20px;
+  }
+  
+  .components li {
+    margin: 8px 0;
+    font-size: 1.1em;
+  }
+  
+  .components a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .components a:hover {
+    text-decoration: underline;
+  }
+  
+  pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    overflow-x: auto;
+  }

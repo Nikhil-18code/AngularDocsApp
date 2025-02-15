@@ -1,0 +1,115 @@
+<div class="angular17" id="angular17-top">
+    <p class="note"><strong>Note:</strong>You have to upgrade to NodeJs 18.13.0 and above before using Angular 17 features.</p>
+    <h1>What's New in Angular 17</h1>
+    <p>
+      Angular 17 introduces a variety of improvements and new features designed to enhance developer productivity, performance, and overall application architecture.
+      In this section, we cover some of the key new features.
+    </p>
+    
+    <h2>1. Enhanced Standalone APIs</h2>
+    <p>
+      Angular 17 builds on the standalone component paradigm by simplifying component creation without the need for NgModules.
+      This leads to a leaner project structure and easier bootstrapping.
+    </p>
+    <pre ngNonBindable>
+      <code>
+  import &#123; Component &#125; from '&#64;angular/core';
+   
+  &#64;Component(&#123;
+    selector: 'app-sample',
+    standalone: true,
+    template: '&lt;p&gt;Hello from a standalone component!&lt;/p&gt;'
+  &#125;)
+  export class SampleComponent &#123;&#125;
+      </code>
+    </pre>
+    
+    <h2>2. Advanced Hydration and SSR Improvements</h2>
+    <p>
+      Angular 17 offers improved server-side rendering with advanced hydration techniques.
+      Partial hydration allows faster initial loads by selectively hydrating dynamic parts of the page.
+    </p>
+    
+    <h2>3. Enhanced Reactive Signals</h2>
+    <p>
+      Angular 17 further refines its reactive signals for managing application state.
+      Signals provide a straightforward way to track state changes and trigger updates in the UI.
+    </p>
+    <pre ngNonBindable>
+      <code>
+  import &#123; signal &#125; from '&#64;angular/core';
+   
+  export class CounterComponent &#123;
+    count = signal(0);
+   
+    increment() &#123;
+      this.count.update(c => c + 1);
+    &#125;
+  &#125;
+      </code>
+    </pre>
+    
+    <h2>4. Performance Optimizations</h2>
+    <p>
+      Expect faster rendering and improved change detection. Angular 17 comes with compiler and bundle optimizations that reduce the final bundle size and improve runtime performance.
+    </p>
+    
+    <h2>5. Angular CLI Enhancements</h2>
+    <p>
+      The Angular CLI in version 17 introduces new commands, faster build times, and enhanced error reporting, leading to an overall smoother development experience.
+    </p>
+    
+    <h2>6. TypeScript 5 Support</h2>
+    <p>
+      Angular 17 now supports TypeScript 5, which provides improved type safety, better performance, and access to the latest language features.
+    </p>
+    
+    <h2>7. Improved Testing APIs</h2>
+    <p>
+      Updated testing harnesses and debugging tools streamline writing and maintaining unit tests.
+      This means more reliable test outcomes and easier debugging of complex components.
+    </p>
+    
+    <h2>8. New Declarative Control Flow</h2>
+    <p>
+      One of the most exciting features in Angular 17 is the new declarative control flow syntax. You can now use a more concise and readable syntax for common control structures directly in your templates.
+    </p>
+    <p><strong>Example for Conditional Rendering (&#64;if):</strong></p>
+    <pre ngNonBindable>
+      <code>
+  &#64;* Example using new declarative &#64;if syntax *&#64;
+  &#64;if (isLoggedIn) &#123;
+    &lt;div&gt;Welcome back, user!&lt;/div&gt;
+  &#125; else &#123;
+    &lt;div&gt;Please log in to continue.&lt;/div&gt;
+  &#125;
+      </code>
+    </pre>
+    <p>
+      In this example, the template will render one of the two blocks based on the value of <code>isLoggedIn</code>.
+    </p>
+    
+    <p><strong>Example for Iteration (&#64;for) and (&#64;empty):</strong></p>
+    <pre ngNonBindable>
+      <code>
+  &#64;* Example using new declarative &#64;for syntax *&#64;
+  &#64;for (let item of items; track by item.id) &#123;
+    &lt;p&gt;&#123;&#123; item &#125;&lt;/p&gt;
+  &#125;
+  &#64;empty &#123;
+    &lt;p&gt;No Products found!&lt;/p&gt; 
+    &#125;
+      </code>
+    </pre>
+    <p>
+      Here, the <code>&#64;for</code> directive iterates over the <code>items</code> array and renders a paragraph for each item.
+      The <code>&#64;empty</code> is executed when <code>items</code> array do not return any value;
+      
+    </p>
+    
+    <h2>Next Steps</h2>
+    <p>
+      Explore these new features further in the official Angular 17 documentation.
+      Continue to other sections like <a routerLink="/guide/components" fragment="components-top">Components</a> or <a routerLink="/guide/services" fragment="services-top">Services</a> for a complete guide.
+    </p>
+  </div>

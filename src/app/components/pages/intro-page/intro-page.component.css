@@ -1,0 +1,45 @@
+.introduction {
+    padding: 25px;
+    font-family: 'Arial', sans-serif;
+    }
+     
+    .introduction h1 {
+      font-size: 2em;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    li {
+      list-style: none;
+    }
+     
+    .introduction h2 {
+      font-size: 1.5em;
+      color: #34495e;
+      margin-top: 20px;
+    }
+     
+    .introduction p {
+      font-size: 1.1em;
+      color: #666;
+      line-height: 1.6;
+    }
+     
+    .introduction ul {
+      padding-left: 20px;
+    }
+     
+    .introduction li {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+     
+    .introduction a {
+      color: #1abc9c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+     
+    .introduction a:hover {
+      text-decoration: underline;
+    }
+     

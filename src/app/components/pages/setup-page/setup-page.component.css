@@ -1,0 +1,54 @@
+.setup {
+    padding: 25px;
+    font-family: 'Arial', sans-serif;
+  }
+  .setup code {
+    font-family: cursive;
+  }
+  .setup h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+   
+  .setup h2 {
+    font-size: 1.5em;
+    color: #34495e;
+    margin-top: 20px;
+  }
+   
+  .setup p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+  }
+   
+  .setup ul {
+    padding-left: 20px;
+  }
+   
+  .setup li {
+    margin: 8px 0;
+    font-size: 1.1em;
+  }
+   
+  .setup a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: bold;
+  }
+   
+  .setup a:hover {
+    text-decoration: underline;
+  }
+   
+  pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    overflow-x: auto;
+  }
+  .router-link {
+    cursor: pointer;
+  }

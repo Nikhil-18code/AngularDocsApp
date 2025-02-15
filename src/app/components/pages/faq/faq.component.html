@@ -1,0 +1,149 @@
+<div class="faq" id="faq-top">
+    <h1>Frequently Asked Questions about Angular</h1>
+    
+    <div class="faq-item">
+      <h2>Q: What is Angular?</h2>
+      <p>
+        A: Angular is a platform and framework for building client-side applications using HTML and TypeScript. Developed and maintained by Google, it offers a comprehensive solution for building scalable web applications.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What is the difference between Angular and AngularJS?</h2>
+      <p>
+        A: AngularJS is the original version (version 1.x) built with JavaScript and based on the Model-View-Controller (MVC) architecture. Angular (version 2 and above) is built with TypeScript, features a component-based architecture, and offers significant performance improvements along with modern tooling.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What are Angular components?</h2>
+      <p>
+        A: Components are the fundamental building blocks of an Angular application. They encapsulate the data, logic, and presentation (HTML and CSS) for a specific view or part of the UI.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: How do I install Angular?</h2>
+      <p>
+        A: To install Angular, first install Node.js (preferably the latest LTS version) and then install the Angular CLI globally by running:
+      </p>
+      <pre ngNonBindable>
+        <code>npm install -g &#64;angular/cli</code>
+      </pre>
+      <p>
+        You can then create a new Angular project with:
+      </p>
+      <pre ngNonBindable>
+        <code>ng new my-angular-app</code>
+      </pre>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What is the Angular CLI?</h2>
+      <p>
+        A: The Angular CLI is a command-line interface tool that helps you scaffold, build, test, and maintain Angular applications with ease.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What is dependency injection in Angular?</h2>
+      <p>
+        A: Dependency Injection (DI) is a design pattern used to supply a component or service with its dependencies rather than having it create them. This promotes modularity, easier testing, and better code maintainability.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What are Angular directives?</h2>
+      <p>
+        A: Directives are classes that add behavior to elements in your Angular applications. They can change the appearance or behavior of a DOM element. Examples include structural directives like <code ngNonBindable>&lt;*ngIf&gt;</code> and attribute directives like <code ngNonBindable>[ngClass]</code>.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: How does data binding work in Angular?</h2>
+      <p>
+        A: Angular supports several data binding techniques:
+        <br /><strong>Interpolation:</strong> Displaying component data in the view using <code ngNonBindable>&#123;&#123;variable&#125;&#125;</code>
+        <br /><strong>Property binding:</strong> Passing data from the component to the DOM.
+        <br /><strong>Event binding:</strong> Listening to DOM events.
+        <br /><strong>Two-way binding:</strong> Using <code>[(ngModel)]</code> for synchronizing data between the component and the view.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What is RxJS and how is it used in Angular?</h2>
+      <p>
+        A: RxJS is a library for reactive programming using observables. Angular uses RxJS extensively for handling asynchronous operations, such as HTTP requests and event handling.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What is Angular Router?</h2>
+      <p>
+        A: Angular Router is the module that provides navigation among views and components in an Angular application. It supports routing parameters, lazy loading, and route guards.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: How can I optimize the performance of my Angular application?</h2>
+      <p>
+        A: Performance can be optimized using techniques such as lazy loading, Ahead-of-Time (AOT) compilation, OnPush change detection strategy, and reducing bundle sizes through tree shaking and code splitting.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What are standalone components in Angular?</h2>
+      <p>
+        A: Standalone components are self-contained components that do not require an NgModule for declaration. They simplify the component architecture and improve modularity.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: How do I handle forms in Angular?</h2>
+      <p>
+        A: Angular offers two approaches for handling forms: Template-driven forms for simpler scenarios and Reactive forms for more complex and scalable form handling with robust validation.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: How do I test Angular applications?</h2>
+      <p>
+        A: Angular supports testing with tools like Jasmine and Karma for unit tests, and Protractor for end-to-end tests. The Angular CLI also provides commands to run tests and generate coverage reports.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What is Angular Ivy?</h2>
+      <p>
+        A: Angular Ivy is the latest rendering engine introduced in Angular 9. It improves performance, reduces bundle sizes, and makes debugging easier. Ivy is now the default rendering engine in Angular.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: How can I secure my Angular application?</h2>
+      <p>
+        A: Security in Angular is achieved by following best practices such as using HTTPS, sanitizing inputs, implementing route guards for authentication, and leveraging Angular’s built-in protection against XSS and other vulnerabilities.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: How do I update or upgrade my Angular application?</h2>
+      <p>
+  A: Angular provides the ng update command to help update dependencies and migrate to newer versions. The official Angular Update Guide (available at update.angular.io) offers detailed instructions for upgrading.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: What is Angular Universal?</h2>
+      <p>
+        A: Angular Universal allows you to perform server-side rendering (SSR) of Angular applications. SSR can improve the performance, SEO, and initial load times of your web applications.
+      </p>
+    </div>
+    
+    <div class="faq-item">
+      <h2>Q: Where can I find more resources to learn Angular?</h2>
+      <p>
+        A: You can learn more about Angular from the official Angular documentation, online tutorials, courses, blogs, community forums, and by following Angular’s GitHub repository. Many developers also attend conferences and meetups to stay updated.
+      </p>
+    </div>
+  </div>

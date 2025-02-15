@@ -1,0 +1,10 @@
+<header class="header">
+    <button class="toggle-btn" (click)="onToggleSidebar()">☰</button>
+    <div class="logo"><a routerLink="/introduction">Angular Docs</a></div>
+    <nav class="nav">
+        <a routerLink="/components" routerLinkActive="active">Components</a>
+        <a routerLink="/angular-17" routerLinkActive="active">Angular 17</a>
+        <a routerLink="/api" routerLinkActive="active">API</a>
+        <button class="dark-mode-btn" (click)="onToggleDarkMode()">🌙</button>
+    </nav>
+</header>

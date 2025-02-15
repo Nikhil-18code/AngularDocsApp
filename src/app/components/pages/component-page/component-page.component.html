@@ -1,0 +1,145 @@
+<div class="components" id="components-top">
+    <h1>Understanding Angular Components</h1>
+    <p>
+        In Angular, <strong>components</strong> are the building blocks of the application. They define the UI and
+        behavior of different sections of your app. Each component consists of three main parts:
+    </p>
+    <ul>
+        <li>✔ <strong>HTML Template (.html)</strong> – Defines the component’s UI</li>
+        <li>✔ <strong>TypeScript Class (.ts)</strong> – Contains logic and data handling</li>
+        <li>✔ <strong>CSS Styles (.css)</strong> – Handles the component’s styling</li>
+    </ul>
+
+    <h2>1. Component Structure</h2>
+    <p>A basic Angular component structure looks like this:</p>
+
+    <pre ngNonBindable><code>&#64;Component(&#123;
+        selector: 'app-example',
+        templateUrl: './example.component.html',
+        styleUrls: ['./example.component.css']
+      &#125;)
+      export class ExampleComponent &#123;
+        title = 'Hello, Angular!';
+      &#125;</code></pre>
+    
+
+    <p>
+        The <code>&#64;Component</code> decorator is used to define metadata for the component, such as:
+    </p>
+    <ul>
+        <li>📌 <strong>selector</strong> – The name used in HTML to display this component
+            (<code>&lt;app-example&gt;&lt;/app-example&gt;</code>).</li>
+        <li>📌 <strong>templateUrl</strong> – The external HTML file containing the UI.</li>
+        <li>📌 <strong>styleUrls</strong> – The external CSS file defining the component's styles.</li>
+    </ul>
+
+    <h2>2. Creating a Component</h2>
+    <p>To generate a new component using Angular CLI, run:</p>
+
+    <pre ngNonBindable><code>ng generate component components/my-new-component --standalone</code></pre>
+
+
+    <p>This will create the following files:</p>
+
+    <pre ngNonBindable><code>components/
+        ├── my-new-component.component.ts
+        ├── my-new-component.component.html
+        └── my-new-component.component.css</code></pre>
+
+
+    <h2>3. Using a Component</h2>
+    <p>
+        Once created, the component can be used inside another component’s template by adding its
+        <strong>selector</strong>:
+    </p>
+
+    <pre ngNonBindable><code>&lt;app-my-new-component&gt;&lt;/app-my-new-component&gt;</code></pre>
+
+    <h2>4. Component Communication</h2>
+    <p>
+        Components communicate with each other using <code>&#64;Input()</code> and <code>&#64;Output()</code>.
+    </p>
+
+    <h3>Passing Data to a Child Component (<code>&#64;Input</code>)</h3>
+    <p>Define an input property in the child component:</p>
+
+    <pre ngNonBindable><code>import &#123; Component, Input &#125; from '&#64;angular/core';
+   
+        &#64;Component(&#123;
+            selector: 'app-child',
+            template: '&lt;p&gt;Received: &#123;&#123; data &#125;&#125;&lt;/p&gt;',
+            standalone: true
+        &#125;)
+    export class ChildComponent &#123;
+        &#64;Input() data: string = '';
+    &#125;
+    </code></pre>
+    
+
+    <p>Use the child component inside a parent and pass data:</p>
+
+    <pre ngNonBindable><code>&lt;app-child [data]="'Hello from Parent!'"&gt;&lt;/app-child&gt;</code></pre>
+
+
+    <h3>Emitting Events from Child to Parent (<code>&#64;Output</code>)</h3>
+    <p>In the child component, create an event emitter:</p>
+
+    <pre ngNonBindable><code>import &#123; Component, EventEmitter, Output &#125; from '&#64;angular/core';
+   
+        &#64;Component(&#123;
+            selector: 'app-child',
+            template: '&lt;button (click)="sendMessage()"&gt;Send Message&lt;/button&gt;',
+            standalone: true
+        &#125;)
+        export class ChildComponent &#123;
+        &#64;Output() messageEvent = new EventEmitter&lt;string&gt;();
+           
+            sendMessage() &#123;
+                this.messageEvent.emit('Hello from Child!');
+            &#125;
+        &#125; 
+    </code></pre>
+
+    <p>In the parent component, listen to the emitted event:</p>
+
+    <pre ngNonBindable><code>&lt;app-child (messageEvent)="receiveMessage($event)"&gt;&lt;/app-child&gt;</code></pre>
+
+
+    <h2>5. Lifecycle Hooks</h2>
+    <p>Angular components have lifecycle hooks that allow you to execute logic at different stages:</p>
+
+    <ul>
+        <li>🔥 <code>ngOnInit()</code> – Runs when the component is initialized.</li>
+        <li>🔥 <code>ngOnChanges()</code> – Runs when input properties change.</li>
+        <li>🔥 <code>ngOnDestroy()</code> – Runs before the component is destroyed.</li>
+    </ul>
+
+    <p>Example:</p>
+
+    <pre ngNonBindable><code>import &#123; Component, OnInit &#125; from '&#64;angular/core';
+   
+        &#64;Component(&#123;
+            selector: 'app-example',
+            template: '&lt;p&gt;Component Loaded!&lt;/p&gt;',
+            standalone: true
+        &#125;)
+        export class ExampleComponent implements OnInit &#123;
+            ngOnInit() &#123;
+                console.log('Component Initialized');
+            &#125;
+        &#125;
+        </code></pre>
+
+    <h2>6. Best Practices</h2>
+    <ul>
+        <li>✔ Use standalone components for modularity.</li>
+        <li>✔ Keep components small and reusable.</li>
+        <li>✔ Use OnPush change detection for performance optimization.</li>
+        <li>✔ Use consistent naming conventions for files.</li>
+    </ul>
+
+    <h2>Next Steps</h2>
+    <p>
+        Now that you understand components, continue to the <a routerLink="/guide/services" fragment="services-top">Services Guide</a> to learn about data handling!
+    </p>
+</div>

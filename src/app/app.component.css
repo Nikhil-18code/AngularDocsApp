@@ -1,0 +1,39 @@
+/* Container holds header, main (sidebar + content) and footer */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+   
+  /* Main content area holds the sidebar and page content */
+  .main {
+    display: flex;
+    flex: 1;
+  }
+   
+  /* Content area styling */
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  .dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  .dark-mode .header {
+    background-color: #1f1f1f;
+  }
+  .dark-mode .sidebar {
+    background-color: #1e1e1e;
+    border-right: 1px solid #333;
+  }
+  .dark-mode .content {
+    background-color: #000000;
+  }
+  .dark-mode .content .angular17{
+    color: #ffffff !important;
+  }
+  .dark-mode a{
+    color: #e0e0e0;
+  }

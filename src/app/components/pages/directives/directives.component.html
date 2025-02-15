@@ -1,0 +1,167 @@
+<div class="directives-pipes" id="directives-pipes-top">
+    <h1>Understanding Angular Directives and Pipes</h1>
+    
+    <p>
+      Angular provides powerful mechanisms for extending HTML through <strong>directives</strong> and <strong>pipes</strong>. Directives allow you to manipulate the DOM and change the appearance or behavior of elements, while pipes transform data in your templates.
+    </p>
+   
+    <!-- Directives Section -->
+    <h2>1. Angular Directives</h2>
+    
+    <h3>What are Directives?</h3>
+    <p>
+      Directives are classes that add behavior to elements in your Angular applications. There are three types:
+    </p>
+    <ul>
+      <li><strong>Components:</strong> Technically, components are directives with a template.</li>
+      <li><strong>Structural Directives:</strong> Change the structure of the DOM (e.g., <code>*ngIf</code>, <code>*ngFor</code>).</li>
+      <li><strong>Attribute Directives:</strong> Change the appearance or behavior of an element (e.g., <code>[ngClass]</code>, <code>[ngStyle]</code>).</li>
+    </ul>
+    
+    <h3>Built-in Directives</h3>
+    <p>
+      Angular provides many built-in directives such as:
+    </p>
+    <ul class="ng-directives">
+      <li><code>*ngIf</code>: Conditionally renders a template.</li>
+      <pre ngNonBindable>
+        <code>
+          &lt;div *ngIf="isLoggedIn; else loggedOut"&gt;
+            &lt;p&gt;Welcome back, user!&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;ng-template #loggedOut&gt;
+            &lt;p&gt;Please log in to continue.&lt;/p&gt;
+          &lt;/ng-template&gt;
+        </code>
+      </pre>
+      <li><code>*ngFor</code>: Iterates over a collection.</li>
+      <pre ngNonBindable>
+        <code>
+          &lt;ul&gt;
+            &lt;li *ngFor="let item of items; let i = index"&gt;
+            &#123; i + 1 &#125;&#123; item &#125;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        </code>
+      </pre>
+      <li><code>[ngClass]</code>: Dynamically adds or removes CSS classes.</li>
+      <pre ngNonBindable>
+        <code>
+          &lt;div [ngClass]=&#123;'active': isActive, 'disabled': isDisabled125;"&gt;
+            This element's classes are set dynamically.
+          &lt;/div&gt;
+        </code>
+      </pre>
+      <li><code>[ngStyle]</code>: Dynamically sets styles on an element.</li>
+      <pre ngNonBindable>
+        <code>
+          &lt;div [ngStyle]=&#123;'background-color': bgColor, 'font-size': fontSize + 'px'125;"&gt;
+            This element's style is set dynamically.
+          &lt;/div&gt;
+        </code>
+      </pre>
+       
+    </ul>
+    
+    <h3>Custom Directives</h3>
+    <p>
+      You can create your own attribute directives. For example, a simple directive to highlight an element on hover:
+    </p>
+    <pre ngNonBindable>
+      <code>
+  import &#123; Directive, ElementRef, Renderer2, HostListener &#125; from '&#64;angular/core';
+   
+  &#64;Directive(&#123;
+    selector: '[appHighlight]'
+  &#125;)
+  export class HighlightDirective &#123;
+    constructor(private el: ElementRef, private renderer: Renderer2) &#123;&#125;
+   
+    &#64;HostListener('mouseenter')
+    onMouseEnter() &#123;
+      this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'yellow');
+    &#125;
+   
+    &#64;HostListener('mouseleave')
+    onMouseLeave() &#123;
+      this.renderer.removeStyle(this.el.nativeElement, 'backgroundColor');
+    &#125;
+  &#125;
+      </code>
+    </pre>
+    
+    <!-- Pipes Section -->
+    <h2>2. Angular Pipes</h2>
+    
+    <h3>What are Pipes?</h3>
+    <p>
+      Pipes are used to transform data in your templates. They take in data as input and transform it to a desired output format.
+    </p>
+    
+    <h3>Built-in Pipes</h3>
+    <p>
+      Angular includes several built-in pipes:
+    </p>
+    <ul>
+      <li><code>date</code>: Formats a date value.</li>
+      <li><code>uppercase</code>: Transforms text to uppercase.</li>
+      <li><code>lowercase</code>: Transforms text to lowercase.</li>
+      <li><code>currency</code>: Formats a number as currency.</li>
+      <li><code>percent</code>: Formats a number as a percentage.</li>
+    </ul>
+    <p>TS file</p>
+    <pre ngNonBindable><code>
+    import &#123; Component &#125; from '&#64;angular/core';
+        &#64;Component(&#123;
+            selector: 'app-root',
+            templateUrl: './app.component.html',
+            styleUrls: ['./app.component.css']
+        &#125;)
+        export class AppComponent &#123;
+          price: number = 12345.6789;
+        &#125;
+        </code>
+    </pre>
+    <p> HTML file</p>
+    <pre ngNonBindable><code>
+    &lt;div&gt;
+        &lt;p&gt;Using curreny pipe&lt;/p&gt;
+        &lt;p&gt;Price: &#123;&#123; price | currency &#125;&#125;&lt;/p&gt;
+        &lt;p&gt;Price: &#123;&#123; price | currency:'EUR':'symbol-narrow':'4.2-2' &#125;&#125;&lt;/p&gt;
+    &lt;/div&gt;
+        </code>
+    </pre>
+    <h3>Custom Pipes</h3>
+    <p>
+      You can also create custom pipes. Here’s an example of a simple pipe that reverses a string:
+    </p>
+    <pre ngNonBindable>
+      <code>
+  import &#123; Pipe, PipeTransform &#125; from '&#64;angular/core';
+   
+  &#64;Pipe(&#123;
+    name: 'reverse'
+  &#125;)
+  export class ReversePipe implements PipeTransform &#123;
+    transform(value: string): string &#123;
+      return value.split('').reverse().join('');
+    &#125;
+  &#125;
+      </code>
+    </pre>
+    
+    <!-- Best Practices and Next Steps -->
+    <h2>3. Best Practices</h2>
+    <ul>
+      <li>Keep your custom directives and pipes focused on a single responsibility.</li>
+      <li>Reuse built-in directives and pipes whenever possible.</li>
+      <li>Write unit tests for your custom directives and pipes.</li>
+      <li>Follow naming conventions to clearly distinguish custom ones from built-in features.</li>
+    </ul>
+    
+    <h2>4. Next Steps</h2>
+    <p>
+      With a solid understanding of directives and pipes, you can now leverage them to build dynamic, data-driven Angular applications.
+      Continue to explore other topics such as <a routerLink="/guide/forms" fragment="forms-top">Forms</a> or <a routerLink="/guide/routing" fragment="routing-top">Routing</a> for more advanced scenarios.
+    </p>
+  </div>
