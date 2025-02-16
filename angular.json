@@ -79,9 +79,8 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/_redirects",
               {
-                "glob": "**/*",
+                "glob": "_redirects",
                 "input": "public"
               }
             ],
