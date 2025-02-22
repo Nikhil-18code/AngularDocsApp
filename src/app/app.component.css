@@ -10,7 +10,7 @@
     display: flex;
     flex: 1;
   }
-   
+  
   /* Content area styling */
   .content {
     flex: 1;
@@ -37,3 +37,16 @@
   .dark-mode a{
     color: #e0e0e0;
   }
+  
+  @media (max-width: 768px) {
+    .main {
+      flex-direction: column;
+    }
+  
+    .content {
+      padding: 0px;
+      position: relative;
+      bottom: 40px;;
+    }
+  }
+  

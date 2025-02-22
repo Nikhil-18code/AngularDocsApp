@@ -1,8 +1,8 @@
 <header class="header">
     <button class="toggle-btn" (click)="onToggleSidebar()">☰</button>
     <div class="second-half">
-        <div class="logo"><a routerLink="/introduction">Angular Docs</a></div>
-        <nav class="nav">
+        <div class="logo center"><a routerLink="/introduction">{{ isMobile ? 'Ng Docs' : 'Angular Docs' }}</a></div>
+        <nav class="nav center">
             <a routerLink="/components" routerLinkActive="active">Components</a>
             <a routerLink="/angular-17" routerLinkActive="active">Angular 17</a>
             <a routerLink="/api" routerLinkActive="active">API</a>

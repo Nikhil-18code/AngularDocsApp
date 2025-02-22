@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -9,6 +9,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  title1="Angular Docs";
+  title2="Ng Docs";
   @Output() toggleSidebar=new EventEmitter<void>();
   @Output() toggleDarkMode=new EventEmitter<void>();
 
@@ -17,5 +19,11 @@ export class HeaderComponent {
   }
   onToggleDarkMode(){
     this.toggleDarkMode.emit();
+  }
+  isMobile = window.innerWidth <= 768; // Initial check
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.isMobile = window.innerWidth <= 768;
   }
 }

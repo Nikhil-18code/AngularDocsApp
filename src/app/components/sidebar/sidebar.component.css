@@ -70,3 +70,14 @@
     width: 0;
     overflow: hidden;
   }
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: 100%;
+      transition: none;
+    }
+    .sidebar.collapsed {
+      height: 0px;
+      z-index: -1;
+    }
+  }
