@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -11,4 +11,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class SidebarComponent {
   @Input () collapsed:boolean=false;
+  @Input() isOpen: boolean = false; 
+  @Output() closeSidebar = new EventEmitter<void>();
+
+  closeMenu(){
+    this.closeSidebar.emit();
+  }
 }

@@ -26,6 +26,7 @@ export class AppComponent {
   title="Angular Documentation App";
   isSidebarCollapsed=false;
   isDarkMode=false;
+  // sidebarOpen = false;
 
   toggleSidebar():void {
     this.isSidebarCollapsed=!this.isSidebarCollapsed;

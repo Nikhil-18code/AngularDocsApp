@@ -1,7 +1,7 @@
 <div class="layout" [ngClass]="{'dark-mode':isDarkMode}">
   <app-header (toggleSidebar)="toggleSidebar()" (toggleDarkMode)="toggleDarkMode()" ></app-header>
   <div class="main">
-    <app-sidebar [collapsed]="isSidebarCollapsed"></app-sidebar>
+    <app-sidebar class="app-sidebar" [collapsed]="isSidebarCollapsed" ></app-sidebar>
     <div class="content">
       <router-outlet></router-outlet>
     </div>

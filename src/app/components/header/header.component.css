@@ -2,11 +2,14 @@
     display: flex;
     align-items: center;
     background: rgb(63,156,205);
-background: linear-gradient(90deg, rgba(63,156,205,1) 42%, rgba(2,0,36,1) 100%);
+    background: linear-gradient(90deg, rgba(63,156,205,1) 42%, rgba(2,0,36,1) 100%);
     color: #fff;
     padding: 10px 20px;
   }
-   
+  .second-half{
+    display: flex;
+    width: 98%;
+  }
   .toggle-btn {
     background: none;
     border: none;
