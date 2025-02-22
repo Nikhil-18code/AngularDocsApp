@@ -8,7 +8,7 @@ import { DirectivesComponent } from './components/pages/directives/directives.co
 import { Angular17Component } from './components/pages/angular-17/angular-17.component';
 
 export const routes: Routes = [
-    { path: '', component: IntroPageComponent, pathMatch: 'full' },
+    {path:'',redirectTo:'introduction',pathMatch:'full'},
     {path:'introduction',component:IntroPageComponent},
     {path:'setup',component:SetupPageComponent},
     {path:'components',component:ComponentPageComponent},
